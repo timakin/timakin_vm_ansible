@@ -23,4 +23,4 @@
       service : name=mysqld state=started enabled=yes
 
   roles:
-    - perl
+    - {role: perl, perl_ver: 5.20.1}
