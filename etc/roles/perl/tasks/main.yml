@@ -14,9 +14,26 @@
   when    : (not installed_flag.stdout)
 
 - name    : Configuration and make install
-  command : sudo {{item}} chdir={{src_dir}}/perl-{{perl_ver}}
+  command : sudo {{item}} chdir={{src_dir}}perl-{{perl_ver}}
   with_items:
     - ./configure.gnu –prefix=/usr/local/perl
     - make
     - make install
   when    : (not installed_flag.stdout)
+
+- name    : Check whether cpanminus is already installed
+  command : find {{src_dir}} -name cpanm
+  register: cpanm_installed_flag
+
+- name:  Install CPANm
+  command: chdir={{src_dir}} curl -LO http://xrl.us/cpanm
+  when: (not cpanm_installed_flag)
+
+- name: App::cpanminus
+  command: chdir={{src_dir}} perl ./ App::cpanminus
+
+- name: Ensure required Perl modules installed
+  yum: name={{ item }} state=present
+  with_items:
+    - perl-Test-Harness
+    - perl-Time-HiRes
