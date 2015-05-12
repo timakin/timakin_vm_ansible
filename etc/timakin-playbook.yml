@@ -24,3 +24,4 @@
 
   roles:
     - {role: perl, perl_ver: 5.20.1}
+    - ansible-cpanm
