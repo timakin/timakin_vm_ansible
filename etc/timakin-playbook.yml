@@ -1,9 +1,6 @@
 - hosts : timakinbox
   user  : vagrant
   sudo  : yes
-  vars:
-    src_dir   : /usr/local/src/
-    perl_ver  : 5.20.2
   tasks :
     - name    : Install Basic libs
       yum     : name={{ item }} state=installed
@@ -25,13 +22,5 @@
     - name    : Start MySQL job process
       service : name=mysqld state=started enabled=yes
 
-    - name    : Download tar file of the latest perl
-      shell   : wget http://www.cpan.org/src/5.0/perl-{{perl_ver}}.tar.gz -P {{src_dir}}
-    - name    : Decompress perl tar file.
-      command : chdir={{src_dir}} tar zxvf perl-{{perl_ver}}.tar.gz
-    - name    : Configuration and make install
-      command : sudo {{item}} chdir={{src_dir}}/perl-{{perl_ver}}
-      with_items:
-        - ./configure.gnu –prefix=/usr/local/perl
-        - make
-        - make install
+  roles:
+    - perl
