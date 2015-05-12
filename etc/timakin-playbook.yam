@@ -1,0 +1,14 @@
+- hosts : timakinbox
+  user  : vagrant
+  sudo  : yes
+  tasks :
+    - name    : Install Apache
+      yum     : name=httpd state=installed
+    - name    : Change the setting of Apache
+      service : name=httpd state=running enabled=yes
+    - name: Install MySQL packages
+      yum: name=$item state=installed
+      with_items:
+        - mysql
+        - mysql-server
+        - mysql-devel
