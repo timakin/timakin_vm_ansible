@@ -1,2 +1,2 @@
 ansible:
-	ansible-playbook -i etc/hosts etc/timakin-playbook.yml
+	ansible-playbook -i etc/hosts etc/timakin-playbook.yml -v
