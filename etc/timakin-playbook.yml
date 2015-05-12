@@ -21,4 +21,3 @@
         - MySQL-python
     - name    : Start MySQL job process
       service : name=mysqld state=started enabled=yes
-  roles :
