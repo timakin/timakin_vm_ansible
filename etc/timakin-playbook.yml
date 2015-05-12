@@ -18,3 +18,9 @@
         - mysql
         - mysql-server
         - mysql-devel
+        - MySQL-python
+    - name    : Start MySQL job process
+      service : name=mysqld state=started enabled=yes
+
+#  roles :
+#    - { role: ansible-perlbrew, perlbrew_user: vagrant, perl_version: perl-5.20.1, perlbrew_root: ~/perl5/perlbrew }
