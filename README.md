@@ -1,4 +1,4 @@
-VM with Ansible
+VM with Ansible: timakinbox
 =============
 
 ## Installation
@@ -6,9 +6,9 @@ VM with Ansible
 ```bash
 $ vagrant box add centos http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.5-x86_64-v20140110.box
 $ vagrant up
-$ ansible-playbook -i etc/hosts etc/timakin-playbook.yam
+$ vagrant ssh-config --host timakinbox >> ~/.ssh/config
+$ ansible-playbook -i etc/hosts etc/timakin-playbook.yml
 ```
-
 
 ## Reference
 
