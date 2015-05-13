@@ -23,8 +23,9 @@
       service : name=mysqld state=started enabled=yes
 
     - name    : Export PATH
-      shell   : echo "export PATH={{ item }}/bin:$PATH" >> /home/vagrant/.bashrc
+      shell   : echo "export PATH=$PATH:{{ item }}/bin" >> /home/vagrant/.bashrc
       with_items:
+        - /usr/local
         - /home/vagrant/perl5
 
   roles:

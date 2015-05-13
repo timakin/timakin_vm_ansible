@@ -4,11 +4,13 @@
   with_items:
     - curl
     - perl-ExtUtils-MakeMaker
+    - perl-devel
+    - perl-CPAN
 
 - name: check cpanm is already installed
-  command: find "/home/vagrant/.cpanm/"
+  command: find /usr/local/bin -name cpanm
   register: cpanm_installed_flag
 
 - name  : install cpanm
-  shell : curl -L http://cpanmin.us | perl - App::cpanminus
+  shell : curl -L http://cpanmin.us | perl - --sudo App::cpanminus
   when  : cpanm_installed_flag.rc != 0
