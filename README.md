@@ -13,6 +13,8 @@ $ make ansible
 $ PATH=$PATH:/home/vagrant/perl5/bin
 $ PATH=$PATH:/usr/local/bin
 $ cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+$ cpanm Carton
+$ cpanm Atom2
 ```
 
 ## Reference
