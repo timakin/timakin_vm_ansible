@@ -1,0 +1,3 @@
+name="SimpleBBS"
+[build]
+build_class = "builder::MyBuilder"
