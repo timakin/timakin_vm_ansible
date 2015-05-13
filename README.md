@@ -32,3 +32,4 @@ $ cpanm Atom2
 
 - [VirtualBoxとVagrantで開発環境を構築](http://www.webcyou.com/?p=4632)
 - [Vagrant + Ansibleを試してみる](http://yokotakenji.me/log/programming/4230/)
+- [Amon2チュートリアル](http://keisyu.hateblo.jp/entry/2014/02/16/214757)
