@@ -31,5 +31,13 @@ sudo chkconfig iptables off
 uniqadd ~/.bashrc PATH=$PATH:/home/vagrant/perl5/bin
 uniqadd ~/.bashrc PATH=$PATH:/usr/local/bin
 
+
 # Reflect setting to bashrc
 source ~/.bashrc
+uniqadd ~/.bashrc "alias provision='sh /vagrant_data/provision.sh'"
+uniqadd ~/.bashrc "alias cdsync='cd /vagrant_data'"
+uniqadd ~/.bash_profile "sh /vagrant_data/provision.sh"
+
+# Cpanm local::lib
+uniqadd ~/.bash_profile "eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)"
+uniqadd ~/.bashrc "alias amsimple='carton exec -- plackup -R ./lib  -Ilib script/simplebbs-server'"

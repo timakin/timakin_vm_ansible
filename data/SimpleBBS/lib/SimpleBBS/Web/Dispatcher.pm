@@ -4,13 +4,16 @@ use warnings;
 use utf8;
 use Amon2::Web::Dispatcher::RouterBoom;
 use Data::Dumper;
+use SimpleBBS::Model::Entry;
 
 any '/' => sub {
     my ($c) = @_;
-    my $entries = $c->dbh->selectall_arrayref(q[
+    my @entries = map {
+        SimpleBBS::Model::Entry->new($_)
+    } @{$c->dbh->selectall_arrayref(q[
             SELECT * FROM entries ORDER BY id DESC
-        ], { Slice => {} });
-    print Dumper $entries;
+        ], { Slice => {} })};
+    print Dumper @entries;
 
     my $counter = $c->session->get('counter') || 0;
     $counter++;
