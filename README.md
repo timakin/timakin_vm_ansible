@@ -1,7 +1,7 @@
 Virtual env construction with Ansible: timakinbox
 =============
 
-## Installation
+## Install
 
 ```bash
 # Base setting
