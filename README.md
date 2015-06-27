@@ -18,7 +18,7 @@ $ sudo chkconfig iptables off
 $ exit
 $ vagrant reload
 
-# PATH release
+# PATH setting
 $ PATH=$PATH:/home/vagrant/perl5/bin
 $ PATH=$PATH:/usr/local/bin
 
