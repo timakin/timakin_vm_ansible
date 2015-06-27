@@ -1,4 +1,4 @@
-Virtual env with Ansible: timakinbox
+Virtual env construction with Ansible: timakinbox
 =============
 
 ## Installation
