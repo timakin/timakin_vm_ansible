@@ -4,7 +4,7 @@ Virtual env construction with Ansible: timakinbox
 ## Installation
 
 ```bash
-# Base construction
+# Base setting
 $ vagrant box add centos http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.5-x86_64-v20140110.box
 $ vagrant up
 $ vagrant ssh-config --host timakinbox >> ~/.ssh/config
