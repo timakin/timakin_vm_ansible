@@ -1,4 +1,4 @@
-VM env with Ansible: timakinbox
+Virtual env with Ansible: timakinbox
 =============
 
 ## Installation
